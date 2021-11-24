@@ -1,5 +1,11 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <NuxtPage></NuxtPage>
   </div>
 </template>
+
+<script setup>
+useMeta({
+  title: "Image Uploader",
+});
+</script>
