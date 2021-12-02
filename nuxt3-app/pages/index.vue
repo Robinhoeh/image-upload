@@ -16,8 +16,8 @@
       <div v-if="isUploadEmpty && !isAssetLoading">
         -DRAG CROP Empty stat COMPONENT-
       </div>
-      <div v-else-if="isAssetLoading">LOADING COMPONENT...</div>
-      <div v-else>-DRAG DROP FULL STATE COMPONENT-</div>
+      <div v-else-if="isAssetLoading"><ImageLoader></ImageLoader></div>
+      <div v-else>-DRAGE DROP FULL STATE COMPONENT-</div>
     </template>
     <template #footer>
       <div v-if="!isAssetLoading">
@@ -42,8 +42,8 @@
 export default {
   data() {
     return {
-      isUploadEmpty: true,
-      isAssetLoading: false,
+      isUploadEmpty: false,
+      isAssetLoading: true,
     };
   },
 };

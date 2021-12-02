@@ -5,6 +5,8 @@
 </template>
 
 <script setup>
+import "./assets/css/tailwind.scss";
+
 useMeta({
   title: "Image Uploader",
 });

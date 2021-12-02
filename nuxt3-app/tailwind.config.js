@@ -21,11 +21,11 @@ module.exports = {
         },
         green: {
           background: '#219653'
-        }
+        },
         grey: {
           loaderBackground: '#F2F2F2',
           lightGrey: '#BDBDBD',
-          darkGrey: #4F4F4F
+          darkGrey: '#4F4F4F'
         }
       }
     },
