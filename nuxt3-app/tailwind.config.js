@@ -27,6 +27,15 @@ module.exports = {
           lightGrey: '#BDBDBD',
           darkGrey: '#4F4F4F'
         }
+      },
+      animation: {
+        lefttoright: 'lefttoright 3s ease-in-out 1s infinite running'
+      },
+      keyframes: {
+        lefttoright: {
+          '0%' : { transform: 'translateX(-100px)' },
+          '100%' : { transform: 'translateX(350px)' }
+        }
       }
     },
   },
