@@ -1,10 +1,21 @@
 <template>
-  <div>This is the index page</div>
-  <AppCard>
+  <AppCard
+    class="
+      tw-min-h-0
+      tw-w-96
+      tw-bg-white
+      tw-rounded-xl
+      tw-shadow-card
+      tw-mt-48
+      tw-mx-auto
+      tw-px-8
+      tw-py-28
+    "
+  >
     <template #header>
       <div v-if="isUploadEmpty && !isAssetLoading">
         <h3>Upload your image</h3>
-        <h4>File should be in ... format</h4>
+        <p>File should be in ... format</p>
       </div>
       <div v-if="!isUploadEmpty && !isAssetLoading">
         <SvgsCheckCircleIcon></SvgsCheckCircleIcon>
@@ -14,7 +25,7 @@
     </template>
     <template #body>
       <div v-if="isUploadEmpty && !isAssetLoading">
-        -DRAG CROP Empty stat COMPONENT-
+        <AppDragAndDrop></AppDragAndDrop>
       </div>
       <div v-else-if="isAssetLoading"><ImageLoader></ImageLoader></div>
       <div v-else>-DRAGE DROP FULL STATE COMPONENT-</div>
@@ -42,8 +53,8 @@
 export default {
   data() {
     return {
-      isUploadEmpty: false,
-      isAssetLoading: true,
+      isUploadEmpty: true,
+      isAssetLoading: false,
     };
   },
 };

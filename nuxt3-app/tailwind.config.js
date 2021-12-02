@@ -28,6 +28,9 @@ module.exports = {
           darkGrey: '#4F4F4F'
         }
       },
+      boxShadow: {
+        'card': '0px 4px 12px 0px rgba(0, 0, 0, 0.1)'
+      },
       animation: {
         lefttoright: 'lefttoright 3s ease-in-out 1s infinite running'
       },

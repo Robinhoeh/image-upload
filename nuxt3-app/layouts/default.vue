@@ -1,7 +1,5 @@
 <template>
   <div>
-    Hey This is the image Uploader
-    {{ name }}
     <slot></slot>
   </div>
 </template>

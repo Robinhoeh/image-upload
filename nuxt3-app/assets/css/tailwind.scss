@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply tw-text-2xl;
+  }
+  h2 {
+    @apply tw-text-xl;
+  }
+  h3 {
+    @apply tw-text-lg;
+  }
+  a {
+    @apply tw-text-blue-600 tw-underline;
+  }
+}
