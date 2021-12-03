@@ -35,7 +35,7 @@
         <div v-if="isUploadEmpty">
           <p>Or</p>
           <AppButton>
-            <template #content> Choose File </template>
+            <template #content> Choose a file </template>
           </AppButton>
         </div>
         <div v-else>
