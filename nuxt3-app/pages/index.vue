@@ -24,11 +24,10 @@
       <div v-else-if="!isUploadEmpty && isAssetLoading">Uploading...</div>
     </template>
     <template #body>
-      <div v-if="isUploadEmpty && !isAssetLoading">
-        <AppDragAndDrop></AppDragAndDrop>
+      <div v-if="isAssetLoading"><ImageLoader></ImageLoader></div>
+      <div v-else>
+        <AppDragAndDrop :imageExists="!isUploadEmpty"></AppDragAndDrop>
       </div>
-      <div v-else-if="isAssetLoading"><ImageLoader></ImageLoader></div>
-      <div v-else>-DRAGE DROP FULL STATE COMPONENT-</div>
     </template>
     <template #footer>
       <div v-if="!isAssetLoading">
@@ -38,9 +37,27 @@
             <template #content> Choose a file </template>
           </AppButton>
         </div>
-        <div v-else>
-          -INPUT-COMPONENT-
-          <AppButton>
+        <div v-else class="tw-relative">
+          <input
+            value="link"
+            id="imgLink"
+            name="imgLink"
+            type="text"
+            class="
+              tw-w-full
+              tw-text-gray-darkGrey
+              tw-py-2
+              tw-px-3
+              tw-text-xs
+              tw-bg-blue-lightBackground
+              tw-rounded-lg
+              tw-border
+              tw-border-solid
+              tw-border-grey-borderGrey
+              tw-h-9
+            "
+          />
+          <AppButton class="tw-absolute btn-nested-input">
             <template #content> Copy Link </template>
           </AppButton>
         </div>
@@ -60,4 +77,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.btn-nested-input {
+  top: 2px;
+  right: 2px;
+}
+</style>

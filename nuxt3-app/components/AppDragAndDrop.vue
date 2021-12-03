@@ -15,14 +15,26 @@
         tw-pt-14
       "
     >
-      <SvgsMountainImage class="tw-pb-6 tw-h-28"></SvgsMountainImage>
-      <h3>Drag and Drop your image here</h3>
+      <template v-if="imageExists">
+        <div>img here<img src="" alt="Image of your file" /></div>
+      </template>
+      <template v-else>
+        <SvgsMountainImage class="tw-pb-6 tw-h-28"></SvgsMountainImage>
+        <h3>Drag and Drop your image here</h3>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    imageExists: {
+      type: Boolean,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
