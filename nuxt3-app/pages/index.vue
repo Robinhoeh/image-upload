@@ -1,39 +1,48 @@
 <template>
   <AppCard
     class="
+      app-card
+      tw-flex
+      tw-flex-col
+      tw-items-center
       tw-min-h-0
-      tw-w-96
       tw-bg-white
       tw-rounded-xl
       tw-shadow-card
       tw-mt-48
-      tw-mx-auto
+      tw-mx-2
       tw-px-8
-      tw-py-28
+      tw-py-9
     "
   >
     <template #header>
-      <div v-if="isUploadEmpty && !isAssetLoading">
-        <h3>Upload your image</h3>
-        <p>File should be in ... format</p>
+      <div class="tw-pb-8">
+        <div v-if="isUploadEmpty && !isAssetLoading">
+          <h1 class="tw-mb-5">Upload your image</h1>
+          <p class="tw-text-grey-greyOnWhite tw-text-xs">
+            File should be in ... format
+          </p>
+        </div>
+        <div v-if="!isUploadEmpty && !isAssetLoading">
+          <SvgsCheckCircleIcon></SvgsCheckCircleIcon>
+          <h3>Upload Successful!</h3>
+        </div>
+        <div v-else-if="!isUploadEmpty && isAssetLoading">Uploading...</div>
       </div>
-      <div v-if="!isUploadEmpty && !isAssetLoading">
-        <SvgsCheckCircleIcon></SvgsCheckCircleIcon>
-        <h3>Upload Successful!</h3>
-      </div>
-      <div v-else-if="!isUploadEmpty && isAssetLoading">Uploading...</div>
     </template>
     <template #body>
-      <div v-if="isAssetLoading"><ImageLoader></ImageLoader></div>
-      <div v-else>
-        <AppDragAndDrop :imageExists="!isUploadEmpty"></AppDragAndDrop>
+      <div class="tw-pb-5">
+        <div v-if="isAssetLoading"><ImageLoader></ImageLoader></div>
+        <div v-else>
+          <AppDragAndDrop :imageExists="!isUploadEmpty"></AppDragAndDrop>
+        </div>
       </div>
     </template>
     <template #footer>
       <div v-if="!isAssetLoading">
-        <div v-if="isUploadEmpty">
-          <p>Or</p>
-          <AppButton>
+        <div v-if="isUploadEmpty" class="tw-text-center">
+          <p class="tw-text-grey-lightGrey tw-text-xs">Or</p>
+          <AppButton class="tw-mt-8">
             <template #content> Choose a file </template>
           </AppButton>
         </div>
@@ -78,6 +87,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app-card {
+  @media (min-width: 640px) {
+    max-width: 402px;
+    margin: 192px auto;
+  }
+}
 .btn-nested-input {
   top: 2px;
   right: 2px;

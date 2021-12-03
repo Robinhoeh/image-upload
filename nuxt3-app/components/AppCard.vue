@@ -3,7 +3,7 @@
     <div>
       <slot name="header"></slot>
     </div>
-    <div>
+    <div class="tw-w-full">
       <slot name="body"></slot>
     </div>
     <div>
