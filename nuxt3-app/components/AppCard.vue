@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div>
+    <div class="tw-w-full">
       <slot name="header"></slot>
     </div>
     <div class="tw-w-full">
       <slot name="body"></slot>
     </div>
-    <div>
+    <div class="tw-w-full">
       <slot name="footer"></slot>
     </div>
   </div>

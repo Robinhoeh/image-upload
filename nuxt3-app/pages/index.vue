@@ -17,17 +17,27 @@
   >
     <template #header>
       <div class="tw-pb-8">
-        <div v-if="isUploadEmpty && !isAssetLoading">
+        <div v-if="isUploadEmpty && !isAssetLoading" class="tw-text-center">
           <h1 class="tw-mb-5">Upload your image</h1>
           <p class="tw-text-grey-greyOnWhite tw-text-xs">
             File should be in ... format
           </p>
         </div>
-        <div v-if="!isUploadEmpty && !isAssetLoading">
-          <SvgsCheckCircleIcon></SvgsCheckCircleIcon>
+        <div
+          v-if="!isUploadEmpty && !isAssetLoading"
+          class="tw-flex tw-flex-col tw-items-center"
+        >
+          <SvgsCheckCircleIcon
+            class="svg-success-icon fill-current"
+          ></SvgsCheckCircleIcon>
           <h3>Upload Successful!</h3>
         </div>
-        <div v-else-if="!isUploadEmpty && isAssetLoading">Uploading...</div>
+        <h2
+          v-else-if="!isUploadEmpty && isAssetLoading"
+          class="tw-text-grey-darkGrey"
+        >
+          Uploading...
+        </h2>
       </div>
     </template>
     <template #body>
@@ -48,7 +58,7 @@
         </div>
         <div v-else class="tw-relative">
           <input
-            value="link"
+            :value="generatedImageLink"
             id="imgLink"
             name="imgLink"
             type="text"
@@ -79,8 +89,9 @@
 export default {
   data() {
     return {
-      isUploadEmpty: true,
+      isUploadEmpty: false,
       isAssetLoading: false,
+      generatedImageLink: "www.image.com/aws",
     };
   },
 };
@@ -96,5 +107,8 @@ export default {
 .btn-nested-input {
   top: 2px;
   right: 2px;
+}
+.fill-current {
+  fill: green;
 }
 </style>

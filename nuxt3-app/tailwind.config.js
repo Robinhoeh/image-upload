@@ -30,6 +30,7 @@ module.exports = {
           greyOnWhite: '#828282'
         }
       },
+     
       boxShadow: {
         'card': '0px 4px 12px 0px rgba(0, 0, 0, 0.1)'
       },
