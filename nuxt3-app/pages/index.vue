@@ -52,9 +52,7 @@
       <div v-if="!isAssetLoading">
         <div v-if="isUploadEmpty" class="tw-text-center">
           <p class="tw-text-grey-lightGrey tw-text-xs">Or</p>
-          <AppButton class="tw-mt-8">
-            <template #content> Choose a file </template>
-          </AppButton>
+          <AppInput @file-upload="uploadUserImage($event)"></AppInput>
         </div>
         <div v-else class="tw-relative">
           <input
@@ -76,9 +74,7 @@
               tw-h-9
             "
           />
-          <AppButton class="tw-absolute btn-nested-input">
-            <template #content> Copy Link </template>
-          </AppButton>
+          <AppInput class="tw-absolute btn-nested-input"></AppInput>
         </div>
       </div>
     </template>
@@ -89,10 +85,15 @@
 export default {
   data() {
     return {
-      isUploadEmpty: false,
+      isUploadEmpty: true,
       isAssetLoading: false,
       generatedImageLink: "www.image.com/aws",
     };
+  },
+  methods: {
+    uploadUserImage($event) {
+      conosole.log("User Image selected", $event);
+    },
   },
 };
 </script>
