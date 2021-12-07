@@ -14,7 +14,9 @@
     "
   >
     <template v-if="imageExists">
-      <div>img here<img src="" alt="Image of your file" /></div>
+      <div>
+        <img :src="userUploadedImage" :alt="userUploadedImage" />
+      </div>
     </template>
     <template v-else>
       <SvgsMountainImage class="tw-pb-11 tw-h-28"></SvgsMountainImage>
@@ -31,6 +33,10 @@ export default {
     imageExists: {
       type: Boolean,
       required: true,
+    },
+    userUploadedImage: {
+      type: String,
+      default: "",
     },
   },
 };

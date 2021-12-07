@@ -44,7 +44,10 @@
       <div class="tw-pb-5">
         <div v-if="isAssetLoading"><ImageLoader></ImageLoader></div>
         <div v-else>
-          <AppDragAndDrop :imageExists="!isUploadEmpty"></AppDragAndDrop>
+          <AppDragAndDrop
+            :imageExists="!isUploadEmpty"
+            :userUploadedImage="filePreview"
+          ></AppDragAndDrop>
         </div>
       </div>
     </template>
@@ -87,12 +90,19 @@ export default {
     return {
       isUploadEmpty: true,
       isAssetLoading: false,
+      fileName: "",
+      filePreview: "",
       generatedImageLink: "www.image.com/aws",
     };
   },
   methods: {
     uploadUserImage($event) {
-      conosole.log("User Image selected", $event);
+      this.isAssetLoading = true;
+      this.filePreview = $event.previewBase64;
+      this.fileName = $event.name;
+      this.isUploadEmpty = !this.isUploadEmpty;
+      this.isAssetLoading = false;
+      console.log("User Image selected", $event);
     },
   },
 };
