@@ -20,7 +20,7 @@
         <div v-if="isUploadEmpty && !isAssetLoading" class="tw-text-center">
           <h1 class="tw-mb-5">Upload your image</h1>
           <p class="tw-text-grey-greyOnWhite tw-text-xs">
-            File should be in ... format
+            File should be in JPEG format
           </p>
         </div>
         <div
@@ -98,9 +98,11 @@ export default {
   methods: {
     uploadUserImage($event) {
       this.isAssetLoading = true;
-      this.filePreview = $event.previewBase64;
-      this.fileName = $event.name;
-      this.isUploadEmpty = !this.isUploadEmpty;
+      setTimeout(() => {
+        this.isUploadEmpty = !this.isUploadEmpty;
+        this.filePreview = $event.previewBase64;
+        this.fileName = $event.name;
+      }, 2000);
       this.isAssetLoading = false;
       console.log("User Image selected", $event);
     },

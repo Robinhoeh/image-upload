@@ -15,7 +15,11 @@
   >
     <template v-if="imageExists">
       <div>
-        <img :src="userUploadedImage" :alt="userUploadedImage" />
+        <img
+          :src="userUploadedImage"
+          :alt="userUploadedImage"
+          class="tw-max-h-80"
+        />
       </div>
     </template>
     <template v-else>
