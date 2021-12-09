@@ -13,21 +13,19 @@
       tw-pb-9
     "
   >
-    <template v-if="imageExists">
-      <div>
-        <img
-          :src="userUploadedImage"
-          :alt="userUploadedImage"
-          class="tw-max-h-80"
-        />
-      </div>
-    </template>
-    <template v-else>
+    <div v-if="imageExists">
+      <img
+        :src="userUploadedImage"
+        :alt="userUploadedImage"
+        class="tw-max-h-80"
+      />
+    </div>
+    <div v-else>
       <SvgsMountainImage class="tw-pb-11 tw-h-28"></SvgsMountainImage>
       <p class="tw-text-grey-lightGrey tw-text-sm">
         Drag & Drop your image here
       </p>
-    </template>
+    </div>
   </div>
 </template>
 

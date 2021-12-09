@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <slot name="loader"></slot>
+    </div>
     <div class="tw-w-full">
       <slot name="header"></slot>
     </div>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2 class="tw-text-grey-darkGrey tw-mb-8">Uploading...</h2>
     <div
       class="
         loader-wrapper
