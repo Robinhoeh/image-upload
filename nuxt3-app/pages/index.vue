@@ -46,7 +46,7 @@
       <template #footer>
         <div v-if="!isAssetLoading">
           <div class="tw-text-center" v-if="!isUploadSaved">
-            <p class="tw-text-grey-lightGrey tw-text-xs">Or</p>
+            <p class="tw-text-grey-lightGrey tw-text-xs tw-pb-5">Or</p>
             <AppInput @file-upload="uploadUserImage($event)"></AppInput>
           </div>
           <div class="tw-relative" v-if="isUploadSaved">
@@ -69,7 +69,7 @@
                 tw-h-9
               "
             />
-            <AppInput class="tw-absolute btn-nested-input"></AppInput>
+            <AppInput class="tw-absolute btn-nested-input tw-top-1"></AppInput>
           </div>
         </div>
       </template>
@@ -97,7 +97,7 @@ export default {
         this.filePreview = $event.previewBase64;
         this.isUploadSaved = true;
         this.isAssetLoading = false;
-      }, 3000);
+      }, 2000);
 
       console.log("User Image selected", $event);
     },
@@ -113,7 +113,6 @@ export default {
   }
 }
 .btn-nested-input {
-  top: 2px;
   right: 2px;
 }
 .fill-current {

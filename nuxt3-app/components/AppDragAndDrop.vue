@@ -12,6 +12,7 @@
       tw-pt-8
       tw-pb-9
     "
+    :class="{'tw-border-none': imageExists}"
   >
     <div v-if="imageExists">
       <img
@@ -20,7 +21,7 @@
         class="tw-max-h-80"
       />
     </div>
-    <div v-else>
+    <div v-else class="tw-flex tw-flex-col tw-items-center">
       <SvgsMountainImage class="tw-pb-11 tw-h-28"></SvgsMountainImage>
       <p class="tw-text-grey-lightGrey tw-text-sm">
         Drag & Drop your image here
